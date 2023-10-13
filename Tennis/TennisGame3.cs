@@ -29,6 +29,11 @@ namespace Tennis
             return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
+        private bool IsDeuce()
+        {
+            return this.player1.Score == this.player2.Score && (this.player1.Score + this.player2.Score >= 6);
+        }
+
         private string ReturnGameState()
         {
             string scoreTermPlayer1 = this.player1.GetScore;
