@@ -32,15 +32,7 @@ namespace Tennis
 
         public void WonPoint(string playerName)
         {
-            if (playerName == this.player1.Name)
-            {
-                this.player1.Scored();
-            }
-
-            if (playerName == this.player2.Name)
-            {
-                this.player2.Scored();
-            }
+            this.GetCorrectPlayerInstance(playerName).Scored();
         }
 
         private IPlayer GetCorrectPlayerInstance(string playerName)
