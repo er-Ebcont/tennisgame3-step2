@@ -3,21 +3,21 @@
     public class Player : IPlayer
     {
         private string _name;
-        private int _score;
+        private Score _score;
         private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public Player(string name)
         {
             this._name = name;
-            this._score = 0;
+            this._score = new Score(0);
         }
 
         public string Name { get => _name; set => _name = value; }
-        public int Score { get => _score; set => _score = value; }
+        public int Score { get => this._score.ScoreProp; set => this._score.ScoreProp = value; }
 
         public bool IsUnderScoreForty
         {
-            get=> this._score < 4;
+            get=> this._score.ScoreProp < 4;
         }
 
         public string GetScoreName
