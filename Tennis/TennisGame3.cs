@@ -26,7 +26,7 @@ namespace Tennis
                 return $"{scoreTermPlayer1}-All"; ;
             }
 
-            if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6))
+            if (IsEarlyGame())
             {
                 string scoreTermPlayer1 = this.player1.GetScore;
                 return $"{scoreTermPlayer1}-{this.player2.GetScore}";
@@ -34,6 +34,11 @@ namespace Tennis
 
             string winningPlayerName = this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
             return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
+        }
+
+        private bool IsEarlyGame()
+        {
+            return (this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6);
         }
 
         private bool ArePlayerScoresEqual()
