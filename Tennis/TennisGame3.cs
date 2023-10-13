@@ -20,13 +20,19 @@ namespace Tennis
                 return "Deuce";
             }
 
-            if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6))
+            if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6) && (this.player1.Score == this.player2.Score))
             {
                 string scoreTermPlayer1 = this.player1.GetScore;
-                return (this.player1.Score == this.player2.Score) ? $"{scoreTermPlayer1}-All" : $"{scoreTermPlayer1}-{this.player2.GetScore}";
+                return $"{scoreTermPlayer1}-All";;
             }
-  
-            string winningPlayerName = this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
+
+            if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6) && (this.player1.Score != this.player2.Score))
+            {
+                string scoreTermPlayer1 = this.player1.GetScore;
+                return $"{scoreTermPlayer1}-{this.player2.GetScore}";
+            }
+
+                string winningPlayerName = this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
             return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
