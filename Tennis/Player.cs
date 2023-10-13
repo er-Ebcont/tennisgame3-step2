@@ -4,6 +4,7 @@
     {
         private string _name;
         private int _score;
+        private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public Player(string name, int score)
         {
