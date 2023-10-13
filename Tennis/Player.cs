@@ -32,5 +32,10 @@
                 return this.scoreTerms[this.Score];
             }
         }
+
+        public void Scored()
+        {
+            this.Score =+this.Score;
+        }
     }
 }

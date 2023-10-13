@@ -14,5 +14,7 @@
         {
             get;
         }
+
+        void Scored();
     }
 }
