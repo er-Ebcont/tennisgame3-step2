@@ -6,7 +6,7 @@
         private int _score;
         private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
-        public Player(string name, int score)
+        public Player(string name)
         {
             this._name = name;
             this._score = 0;
