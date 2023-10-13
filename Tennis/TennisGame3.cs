@@ -32,8 +32,13 @@ namespace Tennis
                 return $"{scoreTermPlayer1}-{this.player2.GetScore}";
             }
 
-            string winningPlayerName = this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
+            string winningPlayerName = GetWinningPlayerName();
             return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
+        }
+
+        private string GetWinningPlayerName()
+        {
+            return this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
         }
 
         private bool IsEarlyGame()
