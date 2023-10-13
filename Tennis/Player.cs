@@ -9,7 +9,7 @@
         public Player(string name, int score)
         {
             this._name = name;
-            this._score = score;
+            this._score = 0;
         }
 
         public string Name { get => _name; set => _name = value; }
