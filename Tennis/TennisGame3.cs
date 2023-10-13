@@ -33,7 +33,12 @@ namespace Tennis
             }
 
             string winningPlayerName = GetWinningPlayerName();
-            return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
+            return HasAdvantage() ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
+        }
+
+        private bool HasAdvantage()
+        {
+            return (Math.Abs(this.player1.Score - this.player2.Score) == 1);
         }
 
         private string GetWinningPlayerName()
