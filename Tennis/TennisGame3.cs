@@ -27,7 +27,7 @@ namespace Tennis
             }
                 
             string winningPlayerName = this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
-            return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
+            return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
         }
 
         public void WonPoint(string playerName)
