@@ -18,7 +18,7 @@ namespace Tennis
             if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6))
             {
                 string scoreTermPlayer1 = this.player1.GetScore;
-                return (this.player1.Score == this.player2.Score) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + this.player2.GetScore;
+                return (this.player1.Score == this.player2.Score) ? $"{scoreTermPlayer1}-All" : $"{scoreTermPlayer1}-{this.player2.GetScore}";
             }
 
             if (this.player1.Score == this.player2.Score)
