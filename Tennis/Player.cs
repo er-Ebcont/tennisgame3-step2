@@ -2,16 +2,16 @@
 {
     public class Player
     {
-        private string playerName1;
-        private int playerScore1;
+        private string _name;
+        private int _score;
 
-        public Player(string playerName1, int playerScore1)
+        public Player(string name, int score)
         {
-            this.playerName1 = playerName1;
-            this.playerScore1 = playerScore1;
+            this._name = name;
+            this._score = score;
         }
 
-        public string PlayerName1 { get => playerName1; set => playerName1 = value; }
-        public int PlayerScore1 { get => playerScore1; set => playerScore1 = value; }
+        public string Name { get => _name; set => _name = value; }
+        public int Score { get => _score; set => _score = value; }
     }
 }
