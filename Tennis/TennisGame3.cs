@@ -18,7 +18,7 @@ namespace Tennis
             if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6))
             {
                 string scoreTermPlayer1 = this.player1.GetScore;
-                return (this.player1.Score == this.player2.Score) ? $"{scoreTermPlayer1}-All" : $"{scoreTermPlayer1}-{this.player2.GetScore}";
+                return ReturnGameState(scoreTermPlayer1);
             }
 
             if (this.player1.Score == this.player2.Score)
@@ -28,6 +28,11 @@ namespace Tennis
                 
             string winningPlayerName = this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
             return (Math.Abs(this.player1.Score - this.player2.Score) == 1) ? $"Advantage {winningPlayerName}" : $"Win for {winningPlayerName}";
+        }
+
+        private string ReturnGameState(string scoreTermPlayer1)
+        {
+            return (this.player1.Score == this.player2.Score) ? $"{scoreTermPlayer1}-All" : $"{scoreTermPlayer1}-{this.player2.GetScore}";
         }
 
         public void WonPoint(string playerName)
