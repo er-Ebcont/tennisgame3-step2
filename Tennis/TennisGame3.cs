@@ -4,7 +4,6 @@ namespace Tennis
     {
         private IPlayer player1;
         private IPlayer player2;
-        private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
         {
@@ -16,8 +15,8 @@ namespace Tennis
         {
             if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6))
             {
-                string scoreTermPlayer1 = scoreTerms[this.player1.Score];
-                return (this.player1.Score == this.player2.Score) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + scoreTerms[this.player2.Score];
+                string scoreTermPlayer1 = this.player1.GetScore;
+                return (this.player1.Score == this.player2.Score) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + this.player2.GetScore;
             }
 
             if (this.player1.Score == this.player2.Score)
