@@ -23,7 +23,10 @@ namespace Tennis
             }
 
             if (playerScore1 == playerScore2)
+            {
                 return "Deuce";
+            }
+                
             string winningPlayerName = playerScore1 > playerScore2 ? playerName1 : playerName2;
             return ((playerScore1 - playerScore2) * (playerScore1 - playerScore2) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
         }
