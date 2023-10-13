@@ -9,5 +9,10 @@
         {
             get;
         }
+
+        string GetScore
+        {
+            get;
+        }
     }
 }

@@ -19,5 +19,18 @@
         {
             get=> this._score < 4;
         }
+
+        public string GetScore
+        {
+            get
+            {
+                if (this.Score >= this.scoreTerms.Length)
+                {
+                    throw new System.Exception($"Error when getting {this.Name} score of {this.Score}");
+                }
+
+                return this.scoreTerms[this.Score];
+            }
+        }
     }
 }
