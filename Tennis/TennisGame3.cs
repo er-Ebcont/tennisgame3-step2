@@ -18,8 +18,8 @@ namespace Tennis
             if ((playerScore1 < 4 && playerScore2 < 4) && (playerScore1 + playerScore2 < 6))
             {
                 string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
-                string s = scoreTerms[playerScore1];
-                return (playerScore1 == playerScore2) ? s + "-All" : s + "-" + scoreTerms[playerScore2];
+                string scoreTermPlayer1 = scoreTerms[playerScore1];
+                return (playerScore1 == playerScore2) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + scoreTerms[playerScore2];
             }
 
             if (playerScore1 == playerScore2)
