@@ -5,13 +5,13 @@ namespace Tennis
         private int playerScore2;
         private int playerScore1;
         private IPlayer player1;
-        private string playerName2;
+        private IPlayer player2;
         private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
         {
             this.player1 = new Player(player1Name, 0);
-            this.playerName2 = player2Name;
+            this.player2 = new Player(player2Name, 0);
         }
 
         public string GetScore()
@@ -27,7 +27,7 @@ namespace Tennis
                 return "Deuce";
             }
                 
-            string winningPlayerName = playerScore1 > playerScore2 ? this.player1.Name : playerName2;
+            string winningPlayerName = playerScore1 > playerScore2 ? this.player1.Name : this.player2.Name;
             return ((playerScore1 - playerScore2) * (playerScore1 - playerScore2) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
         }
 
@@ -38,7 +38,7 @@ namespace Tennis
                 this.playerScore1 += 1;
             }
 
-            if (playerName == this.playerName2)
+            if (playerName == this.player2.Name)
             {
                 this.playerScore2 += 1;
             }
