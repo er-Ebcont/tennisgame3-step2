@@ -17,11 +17,10 @@ namespace Tennis
         {
             if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6))
             {
-                
                 return ReturnGameState();
             }
 
-            if (this.player1.Score == this.player2.Score)
+            if (this.player1.Score == this.player2.Score && (this.player1.Score + this.player2.Score >= 6))
             {
                 return "Deuce";
             }
