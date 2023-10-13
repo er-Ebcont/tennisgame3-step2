@@ -15,7 +15,7 @@ namespace Tennis
 
         public string GetScore()
         {
-            if (this.player1.Score == this.player2.Score && (this.player1.Score + this.player2.Score >= 6))
+            if (this.IsDeuce())
             {
                 return "Deuce";
             }
