@@ -11,5 +11,18 @@
         }
 
         public int ScoreProp { get => _score; set => _score = value; }
+
+        public string GetScoreName
+        {
+            get
+            {
+                if (this._score >= this.scoreTerms.Length)
+                {
+                    throw new System.Exception($"Score not valid {this._score}");
+                }
+
+                return this.scoreTerms[this._score];
+            }
+        }
     }
 }
