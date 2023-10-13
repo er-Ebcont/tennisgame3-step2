@@ -35,7 +35,7 @@
 
         public void Scored()
         {
-            this.Score =+this.Score;
+            this.Score += 1;
         }
     }
 }

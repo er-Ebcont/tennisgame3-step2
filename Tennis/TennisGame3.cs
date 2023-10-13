@@ -34,12 +34,12 @@ namespace Tennis
         {
             if (playerName == this.player1.Name)
             {
-                this.player1.Score += 1;
+                this.player1.Scored();
             }
 
             if (playerName == this.player2.Name)
             {
-                this.player2.Score += 1;
+                this.player2.Scored();
             }
         }
 
