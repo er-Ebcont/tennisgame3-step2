@@ -2,8 +2,6 @@ namespace Tennis
 {
     public class TennisGame3 : ITennisGame
     {
-        private int playerScore2;
-        //private int playerScore1;
         private IPlayer player1;
         private IPlayer player2;
         private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
@@ -16,19 +14,19 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((this.player1.Score < 4 && playerScore2 < 4) && (this.player1.Score + playerScore2 < 6))
+            if ((this.player1.Score < 4 && this.player2.Score < 4) && (this.player1.Score + this.player2.Score < 6))
             {
                 string scoreTermPlayer1 = scoreTerms[this.player1.Score];
-                return (this.player1.Score == playerScore2) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + scoreTerms[playerScore2];
+                return (this.player1.Score == this.player2.Score) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + scoreTerms[this.player2.Score];
             }
 
-            if (this.player1.Score == playerScore2)
+            if (this.player1.Score == this.player2.Score)
             {
                 return "Deuce";
             }
                 
-            string winningPlayerName = this.player1.Score > playerScore2 ? this.player1.Name : this.player2.Name;
-            return ((this.player1.Score - playerScore2) * (this.player1.Score - playerScore2) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
+            string winningPlayerName = this.player1.Score > this.player2.Score ? this.player1.Name : this.player2.Name;
+            return ((this.player1.Score - this.player2.Score) * (this.player1.Score - this.player2.Score) == 1) ? "Advantage " + winningPlayerName : "Win for " + winningPlayerName;
         }
 
         public void WonPoint(string playerName)
@@ -40,7 +38,7 @@ namespace Tennis
 
             if (playerName == this.player2.Name)
             {
-                this.playerScore2 += 1;
+                this.player2.Score += 1;
             }
         }
 
