@@ -6,6 +6,7 @@ namespace Tennis
         private int playerScore1;
         private string playerName1;
         private string playerName2;
+        private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public TennisGame3(string player1Name, string player2Name)
         {
@@ -17,7 +18,6 @@ namespace Tennis
         {
             if ((playerScore1 < 4 && playerScore2 < 4) && (playerScore1 + playerScore2 < 6))
             {
-                string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
                 string scoreTermPlayer1 = scoreTerms[playerScore1];
                 return (playerScore1 == playerScore2) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + scoreTerms[playerScore2];
             }
