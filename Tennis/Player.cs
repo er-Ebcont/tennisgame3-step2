@@ -14,5 +14,10 @@
 
         public string Name { get => _name; set => _name = value; }
         public int Score { get => _score; set => _score = value; }
+
+        public bool IsUnderScoreForty
+        {
+            get=> this._score < 4;
+        }
     }
 }

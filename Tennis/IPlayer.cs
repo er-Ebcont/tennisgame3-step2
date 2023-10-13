@@ -4,5 +4,10 @@
     {
         string Name { get; set; }
         int Score { get; set; }
+
+        bool IsUnderScoreForty
+        {
+            get;
+        }
     }
 }
