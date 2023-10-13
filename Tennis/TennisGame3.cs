@@ -22,14 +22,12 @@ namespace Tennis
 
             if (ArePlayerScoresEqual())
             {
-                string scoreTermPlayer1 = this.player1.GetScore;
-                return $"{scoreTermPlayer1}-All"; ;
+                return $"{this.player1.GetScore}-All"; ;
             }
 
             if (IsEarlyGame())
             {
-                string scoreTermPlayer1 = this.player1.GetScore;
-                return $"{scoreTermPlayer1}-{this.player2.GetScore}";
+                return $"{this.player1.GetScore}-{this.player2.GetScore}";
             }
 
             string winningPlayerName = GetWinningPlayerName();
