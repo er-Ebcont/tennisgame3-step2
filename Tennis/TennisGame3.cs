@@ -14,7 +14,7 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((this.player1.Score < 4 && this.player2.Score < 4) && (this.player1.Score + this.player2.Score < 6))
+            if ((this.player1.IsUnderScoreForty && this.player2.IsUnderScoreForty) && (this.player1.Score + this.player2.Score < 6))
             {
                 string scoreTermPlayer1 = scoreTerms[this.player1.Score];
                 return (this.player1.Score == this.player2.Score) ? scoreTermPlayer1 + "-All" : scoreTermPlayer1 + "-" + scoreTerms[this.player2.Score];
