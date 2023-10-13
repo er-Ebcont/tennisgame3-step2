@@ -43,5 +43,20 @@ namespace Tennis
             }
         }
 
+        private IPlayer GetCorrectPlayerInstance(string playerName)
+        {
+            if (playerName == this.player1.Name)
+            {
+                return this.player1;
+            }
+
+            if (playerName == this.player2.Name)
+            {
+                return this.player2;
+            }
+
+            throw new Exception($"Player with name {playerName} not found!");
+        }
+
     }
 }
