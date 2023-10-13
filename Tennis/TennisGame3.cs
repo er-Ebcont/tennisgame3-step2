@@ -4,13 +4,13 @@ namespace Tennis
     {
         private int p2;
         private int p1;
-        private string p1N;
-        private string p2N;
+        private string playerName1;
+        private string playerName2;
 
         public TennisGame3(string player1Name, string player2Name)
         {
-            this.p1N = player1Name;
-            this.p2N = player2Name;
+            this.playerName1 = player1Name;
+            this.playerName2 = player2Name;
         }
 
         public string GetScore()
@@ -26,7 +26,7 @@ namespace Tennis
             {
                 if (p1 == p2)
                     return "Deuce";
-                s = p1 > p2 ? p1N : p2N;
+                s = p1 > p2 ? playerName1 : playerName2;
                 return ((p1 - p2) * (p1 - p2) == 1) ? "Advantage " + s : "Win for " + s;
             }
         }
