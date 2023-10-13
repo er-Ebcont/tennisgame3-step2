@@ -10,7 +10,7 @@
             get;
         }
 
-        string GetScore
+        string GetScoreName
         {
             get;
         }

@@ -20,7 +20,7 @@
             get=> this._score < 4;
         }
 
-        public string GetScore
+        public string GetScoreName
         {
             get
             {
