@@ -4,7 +4,6 @@
     {
         private string _name;
         private Score _score;
-        private string[] scoreTerms = { "Love", "Fifteen", "Thirty", "Forty" };
 
         public Player(string name)
         {
@@ -24,12 +23,7 @@
         {
             get
             {
-                if (this.Score >= this.scoreTerms.Length)
-                {
-                    throw new System.Exception($"Error when getting {this.Name} score of {this.Score}");
-                }
-
-                return this.scoreTerms[this.Score];
+                return this._score.GetScoreName;
             }
         }
 
